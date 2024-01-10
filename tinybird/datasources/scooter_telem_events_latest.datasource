@@ -1,4 +1,3 @@
-# Data Source created from Pipe 'scooter_telem_events_latest_mv'
 
 SCHEMA >
     `battery_percent` Int16,

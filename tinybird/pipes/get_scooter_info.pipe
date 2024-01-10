@@ -4,11 +4,11 @@ NODE get_scooter
 SQL >
 
     %
-    SELECT *
-    FROM get_latest_events
-    WHERE
-        scooter_id
-        = {{ String(scooter_id, '5c327e82-30d5-4d5c-9f1e-50a911a26824') }}
+        SELECT *
+        FROM get_latest_events
+        WHERE
+            scooter_id
+            = {{ String(scooter_id, '5c327e82-30d5-4d5c-9f1e-50a911a26824') }}
 
 
 

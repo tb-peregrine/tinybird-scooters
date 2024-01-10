@@ -11,14 +11,14 @@ NODE endpoint
 SQL >
 
     %
-    SELECT
-      scooter_id,
-      latitude,
-      longitude
-    FROM get_latest_values
-    WHERE status = 'in_use'
-    {% if defined(num_results) %}
-        LIMIT {{UInt16(num_results, 10, "The number of scooters to display")}}
-    {% end %}
+        SELECT
+          scooter_id,
+          latitude,
+          longitude
+        FROM get_latest_values
+        WHERE status = 'in_use'
+        {% if defined(num_results) %}
+            LIMIT {{UInt16(num_results, 10, "The number of scooters to display")}}
+        {% end %}
 
 
