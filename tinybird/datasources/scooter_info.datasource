@@ -11,9 +11,3 @@ SCHEMA >
 ENGINE "MergeTree"
 ENGINE_PARTITION_KEY "toYear(purchased_date)"
 ENGINE_SORTING_KEY "purchased_date, scooter_make, scooter_model, last_serviced_engineer_id"
-
-#IMPORT_SERVICE 's3'
-#IMPORT_CONNECTION_NAME 'tinybird-scooters-aws'
-#IMPORT_BUCKET_URI 's3://tinybird-scooters/scooter_info.csv'
-#IMPORT_STRATEGY 'append'
-#IMPORT_SCHEDULE '@on-demand'

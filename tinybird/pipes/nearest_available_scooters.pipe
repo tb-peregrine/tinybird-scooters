@@ -11,13 +11,13 @@ NODE filter_by_battery_percent_and_available
 SQL >
 
     %
-    SELECT
-      scooter_id,
-      latitude,
-      longitude
-    FROM get_latest_values
-    WHERE battery_percent > {{UInt16(battery_threshold, 60, description="Only show scooters with battery above this percent, 0-100")}}
-    AND status = 'available'
+        SELECT
+          scooter_id,
+          latitude,
+          longitude
+        FROM get_latest_values
+        WHERE battery_percent > {{UInt16(battery_threshold, 60, description="Only show scooters with battery above this percent, 0-100")}}
+        AND status = 'available'
 
 
 
@@ -25,13 +25,13 @@ NODE endpoint
 SQL >
 
     %
-    SELECT
-      scooter_id,
-      latitude,
-      longitude,
-      sqrt(pow(latitude - {{Float32(user_latitude, 36.08329)}},2) + pow(longitude - {{Float32(user_longitude, -115.2967)}},2)) AS distance
-    FROM filter_by_battery_percent_and_available
-    ORDER BY distance ASC
-    LIMIT {{UInt16(num_results, 10, "The number of scooters to display")}}
+        SELECT
+          scooter_id,
+          latitude,
+          longitude,
+          sqrt(pow(latitude - {{Float32(user_latitude, 36.08329)}},2) + pow(longitude - {{Float32(user_longitude, -115.2967)}},2)) AS distance
+        FROM filter_by_battery_percent_and_available
+        ORDER BY distance ASC
+        LIMIT {{UInt16(num_results, 10, "The number of scooters to display")}}
 
 

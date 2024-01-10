@@ -4,12 +4,12 @@ NODE latest
 SQL >
 
     %
-    SELECT *
-    FROM scooter_telem_events_latest
-    {% if defined(scooter_id) %}
-        WHERE scooter_id = {{ String(scooter_id) }}
-    {% end %}
-    ORDER BY timestamp DESC
-    LIMIT 1 BY scooter_id
+        SELECT *
+        FROM scooter_telem_events_latest
+        {% if defined(scooter_id) %}
+            WHERE scooter_id = {{ String(scooter_id) }}
+        {% end %}
+        ORDER BY timestamp DESC
+        LIMIT 1 BY scooter_id
 
 

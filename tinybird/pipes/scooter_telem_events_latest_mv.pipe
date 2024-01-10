@@ -8,8 +8,5 @@ SQL >
 
 TYPE materialized
 DATASOURCE scooter_telem_events_latest
-ENGINE "ReplacingMergeTree"
-ENGINE_PARTITION_KEY "toYYYYMM(timestamp)"
-ENGINE_SORTING_KEY "scooter_id"
-ENGINE_VER "timestamp"
+
 
