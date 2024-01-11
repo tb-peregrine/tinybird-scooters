@@ -12,4 +12,4 @@ SQL >
         SELECT
           count()
         FROM get_latest_values
-        AND status = 'available'
+        WHERE status = 'available'
