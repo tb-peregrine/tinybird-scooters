@@ -1,0 +1,15 @@
+NODE get_latest_values
+SQL >
+
+    SELECT * FROM get_latest_events
+
+
+
+NODE endpoint
+SQL >
+
+    %
+        SELECT
+          count()
+        FROM get_latest_values
+        WHERE status = 'available'
