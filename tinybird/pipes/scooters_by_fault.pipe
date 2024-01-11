@@ -1,0 +1,21 @@
+TOKEN "scooters_by_fault_endpoint_read_4495" READ
+
+NODE get_latest
+SQL >
+
+    SELECT * from get_latest_events
+
+
+
+NODE endpoint
+SQL >
+
+    %
+    SELECT * EXCEPT fault_severity
+    FROM get_latest
+    WHERE status = 'fault'
+    {% if defined(severity) %}
+      AND fault_severity = {{String(severity, 'CRITICAL')}}
+    {% end %}
+
+
