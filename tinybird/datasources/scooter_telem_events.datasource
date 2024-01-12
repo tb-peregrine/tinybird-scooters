@@ -2,6 +2,7 @@
 SCHEMA >
     `battery_percent` Int16 `json:$.battery_percent`,
     `fault_severity` String `json:$.fault_severity`,
+    `fault_msg` Nullable(String) `json:$.fault_msg`,
     `journey_id` String `json:$.journey_id`,
     `latitude` Float32 `json:$.latitude`,
     `longitude` Float32 `json:$.longitude`,
