@@ -118,6 +118,9 @@ def generate_data(uuids, state):
             'journey_id': journey_id
         }
 
+        if status == 'fault':
+            data['fault_msg'] = 'test_message'
+
         data_list.append(data)
 
         # Store new state
